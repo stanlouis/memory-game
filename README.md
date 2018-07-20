@@ -1,6 +1,6 @@
 # Clicky Game
 
-## OverviewUp
+## Overview
 This is a memory game with React
 
 1. This application renders different images to the screen.
