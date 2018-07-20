@@ -1,6 +1,8 @@
 {
   "name": "memory-game",
   "version": "0.1.0",
+  "homepage": "https://stanlouis.github.io/memory-game",
+  "deploy" : "npm run build&&gh-pages -d build",
   "private": true,
   "dependencies": {
     "react": "^16.4.1",
@@ -13,5 +15,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
   }
 }
