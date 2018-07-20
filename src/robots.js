@@ -48,5 +48,15 @@ export const robots = [
     id: 10,
     name: "Darwin Node",
     guessed: false
+  },
+  {
+    id: 11,
+    name: "Cintia Gui",
+    guessed: false
+  },
+  {
+    id: 12,
+    name: "Salma Jsx",
+    guessed: false
   }
 ];

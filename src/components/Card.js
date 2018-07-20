@@ -9,7 +9,6 @@ const Card = ({ name, email, id, roboClicked }) => {
       <img src={`https://robohash.org/${id}200*200`} alt="robots" />
       <div>
         <h2>{name}</h2>
-        <p>{email}</p>
       </div>
     </div>
   );

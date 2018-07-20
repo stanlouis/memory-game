@@ -11,8 +11,8 @@ class CardList extends Component {
     };
   }
 
-  shuffle = arra1 => {
-    let ctr = arra1.length;
+  shuffle = listItems => {
+    let ctr = listItems.length;
     let temp;
     let index;
 
@@ -23,29 +23,44 @@ class CardList extends Component {
       // Decrease ctr by 1
       ctr--;
       // And swap the last element with it
-      temp = arra1[ctr];
-      arra1[ctr] = arra1[index];
-      arra1[index] = temp;
+      temp = listItems[ctr];
+      listItems[ctr] = listItems[index];
+      listItems[index] = temp;
     }
-    return arra1;
+    return listItems;
   };
 
-  roboClicked = id => {
+  robotClicked = id => {
+    const robots = this.state.robots;
+    //set clicked image guessed to true;
+
+    const guessedImgArr = robots.filter(item => item.id === id);
+    console.log(guessedImgArr, robots);
     console.log("Clicked", id);
-    this.setState({
-      robots: this.shuffle(robots),
-      score: this.state.score + 1
-    });
+    if (!guessedImgArr[0].guessed) {
+      this.setState({
+        robots: this.shuffle(robots),
+        score: this.state.score + 1
+      });
+      guessedImgArr[0].guessed = true;
+    } else {
+      this.setState({
+        robots: this.shuffle(robots),
+        score: 0
+      });
+      alert("Your Memory could be improved?");
+      //Reset guessed
+      robots.forEach(robot => (robot.guessed = false));
+    }
   };
-
 
   render() {
     return (
       <div>
-        <h1>The score is: {this.state.score}</h1>
+        <h1>The score is: {this.state.score} of 10</h1>
         {this.state.robots.map(robot => (
           <Card
-            roboClicked={this.roboClicked}
+            roboClicked={this.robotClicked}
             key={robot.id}
             id={robot.id}
             name={robot.name}
