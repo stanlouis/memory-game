@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Card from "./Card";
+import Robot from "./Robot";
 import { robots } from "../robots";
 
-class CardList extends Component {
+class RobotsList extends Component {
   constructor() {
     super();
     this.state = {
@@ -57,9 +57,9 @@ class CardList extends Component {
   render() {
     return (
       <div>
-        <h1>The score is: {this.state.score} of 10</h1>
+        <h2>The score is: <span className="bg-light-green">{this.state.score} of 10 </span></h2>
         {this.state.robots.map(robot => (
-          <Card
+          <Robot
             roboClicked={this.robotClicked}
             key={robot.id}
             id={robot.id}
@@ -71,4 +71,4 @@ class CardList extends Component {
   }
 }
 
-export default CardList;
+export default RobotsList;

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ name, email, id, roboClicked }) => {
+const Robot = ({ name, email, id, roboClicked }) => {
   return (
     <div
       className="tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5"
@@ -14,4 +14,4 @@ const Card = ({ name, email, id, roboClicked }) => {
   );
 };
 
-export default Card;
+export default Robot;
