@@ -1,4 +1,4 @@
-# Clicky Game
+# Memory Game
 
 ## Overview
 This is a memory game with React
@@ -11,4 +11,4 @@ This is a memory game with React
 
 4. Once the user's score is reset after an incorrect guess, the game restart.
 
-[GifTastic](https://stanlouis.github.io/memory-game/)
+[Memory Game](https://stanlouis.github.io/memory-game/)
