@@ -37,12 +37,23 @@ class RobotsList extends Component {
     //set clicked image guessed to true;
 
     const guessedImgArr = robots.filter(item => item.id === id);
+
     if (!guessedImgArr[0].guessed) {
       this.setState({
         robots: this.shuffle(robots),
         score: this.state.score + 1
       });
       guessedImgArr[0].guessed = true;
+      console.log(this.state.score);
+      //Score is about to be 12
+      if (this.state.score === 9) {
+        alert('Your memory is in top shape');
+        this.setState({
+          robots: this.shuffle(robots),
+          score: 0
+        });
+        robots.forEach(robot => (robot.guessed = false));
+      }
     } else {
       this.setState({
         robots: this.shuffle(robots),
@@ -60,7 +71,7 @@ class RobotsList extends Component {
         <Score>
           <div className="pa4">
             <span className="bg-light-green br-pill f3 ba pa3">
-              The score is: {this.state.score} of 10{' '}
+              The score is: {this.state.score} of 10
             </span>
           </div>
         </Score>
