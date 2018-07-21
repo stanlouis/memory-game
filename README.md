@@ -10,3 +10,5 @@ This is a memory game with React
 3. Every time an image is clicked, the images rendered to the page shuffle themselves in a random order.
 
 4. Once the user's score is reset after an incorrect guess, the game restart.
+
+[GifTastic](https://stanlouis.github.io/memory-game/)
