@@ -1,10 +1,10 @@
 import React from "react";
 
-const Robot = ({ name, email, id, roboClicked }) => {
+const Robot = ({ name, email, id, robotClicked }) => {
   return (
     <div
       className="tc bg-light-green dib br3 pa2-m ma2 grow bw2 shadow-5"
-      onClick={() => roboClicked(id)}
+      onClick={() => robotClicked(id)}
     >
       <img src={`https://robohash.org/${id}50*50`} alt="robots" />
       <div>

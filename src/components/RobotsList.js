@@ -1,6 +1,8 @@
-import React, { Component } from "react";
-import Robot from "./Robot";
-import { robots } from "../robots";
+import React, { Component } from 'react';
+import Robot from './Robot';
+import { robots } from '../robots';
+import Scroll from './Scroll';
+import Score from './Score';
 
 class RobotsList extends Component {
   constructor() {
@@ -35,8 +37,6 @@ class RobotsList extends Component {
     //set clicked image guessed to true;
 
     const guessedImgArr = robots.filter(item => item.id === id);
-    console.log(guessedImgArr, robots);
-    console.log("Clicked", id);
     if (!guessedImgArr[0].guessed) {
       this.setState({
         robots: this.shuffle(robots),
@@ -48,7 +48,7 @@ class RobotsList extends Component {
         robots: this.shuffle(robots),
         score: 0
       });
-      alert("Your Memory could be improved?");
+      alert('Your Memory could be improved?');
       //Reset guessed
       robots.forEach(robot => (robot.guessed = false));
     }
@@ -57,15 +57,23 @@ class RobotsList extends Component {
   render() {
     return (
       <div>
-        <h2>The score is: <span className="bg-light-green">{this.state.score} of 10 </span></h2>
-        {this.state.robots.map(robot => (
-          <Robot
-            roboClicked={this.robotClicked}
-            key={robot.id}
-            id={robot.id}
-            name={robot.name}
-          />
-        ))}
+        <Score>
+          <div className="pa4">
+            <span className="bg-light-green br-pill f3 ba pa3">
+              The score is: {this.state.score} of 10{' '}
+            </span>
+          </div>
+        </Score>
+        <Scroll>
+          {this.state.robots.map(robot => (
+            <Robot
+              robotClicked={this.robotClicked}
+              key={robot.id}
+              id={robot.id}
+              name={robot.name}
+            />
+          ))}
+        </Scroll>
       </div>
     );
   }
